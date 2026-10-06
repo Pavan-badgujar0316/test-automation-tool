@@ -1,0 +1,12 @@
+[
+  {"name": "Health check returns 200", "url": "http://localhost:8000/health",
+   "expected_status": 200, "expected_text": "ok", "max_seconds": 1.0},
+  {"name": "Items list returns 200", "url": "http://localhost:8000/items",
+   "expected_status": 200, "expected_text": "Sword", "max_seconds": 1.0},
+  {"name": "Single item returns correct name", "url": "http://localhost:8000/items/1",
+   "expected_status": 200, "expected_text": "Sword", "max_seconds": 1.0},
+  {"name": "Unknown path returns 404", "url": "http://localhost:8000/nothing",
+   "expected_status": 404, "expected_text": "not found", "max_seconds": 1.0},
+  {"name": "Slow endpoint stays under 3 seconds", "url": "http://localhost:8000/slow",
+   "expected_status": 200, "expected_text": "slow but ok", "max_seconds": 3.0}
+]
